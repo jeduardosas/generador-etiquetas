@@ -1,0 +1,145 @@
+body{
+  font-family:sans-serif;
+  font-size:16px;
+  margin:0;
+  padding:0;
+}
+h2,p{
+  margin:0;
+}
+
+.header{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.logo-container img{
+  width: 200px;
+  height: auto;
+}
+.tittle{
+  text-align:center;
+}
+
+.app{
+  padding:20px;
+
+}
+.formulario{
+  margin-bottom: 20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  max-width: 500px;
+}
+.formulario input{
+  padding:8px;
+  font-size:16px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+.botones{
+  display:flex;
+  gap:10px;
+}
+.opciones label{
+  margin-right:10px;
+}
+.etiquetas{
+  width: 27.9cm;
+  height: 21cm;
+  display:grid;
+  grid-template-columns:repeat(8, 1fr);
+  
+  page-break-after: always;
+}
+.etiqueta{
+  width: 5cm;
+  height:3cm;
+  border:1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:center;
+  font-size: 8px;
+  text-align:center;
+  break-inside: avoid;
+}
+.etiqueta h3{
+  font-size: 12px;
+  margin: 0;
+}
+.etiqueta h2{
+  font-size: 18px;
+  font-weight:bold ;
+}
+.etiqueta p{
+  font-size: 14px;
+}
+.logo-pequeno{
+  width: 50px;
+  height: auto;
+}
+
+/* estilos para hoja completa */
+.hoja-completa{
+  width: 21cm;
+  height: 27.9cm;
+  border:2px dashed #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size:32px;
+  break-after: page;
+
+}
+.logo-grande{
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/*Estilos para anuncios*/
+.anuncios{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.anuncio{
+  width: 21cm;
+  height: 27.9cm;
+  border:3px  solid red;
+  box-sizing: border-box;
+  padding:40px;
+  text-align:center;
+  font-size:28px;
+  break-after: page;
+
+
+}
+.logo-anuncio{
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+
+@media print{
+  body *, .header, .tittle {
+    visibility: hidden;
+  }
+  .app, .app * {
+    visibility: visible;
+  }
+  .formulario, .botones, .opciones{
+    display:none;
+  }
+  .etiqueta, .hoja-completa, .anuncio{
+    page-break-after: avoid;
+  }
+}
+
