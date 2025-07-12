@@ -1,145 +1,260 @@
-body{
-  font-family:sans-serif;
-  font-size:16px;
-  margin:0;
-  padding:0;
-}
-h2,p{
-  margin:0;
+/* YoliChel Mini Framework */
+
+/* Colores */
+:root {
+  --verde-hoja: #2E7D32;
+  --amarillo-maiz: #FBC02D;
+  --blanco-hueso: #F9F9F6;
+  --verde-oscuro: #1B5E20;
+  --gris-oscuro: #212121;
+  --gris-claro: #616161;
+  --rojo-jitomate: #D32F2F;
+  --verde-limon: #AED581;
 }
 
-.header{
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-}
-.logo-container img{
-  width: 200px;
-  height: auto;
-}
-.tittle{
-  text-align:center;
+/* Tipografía base */
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  background-color: var(--blanco-hueso);
+  color: var(--gris-oscuro);
+  margin: 0;
+  padding: 0;
 }
 
-.app{
-  padding:20px;
+/* Encabezados */
+h1, h2, h3, h4, h5 {
+  color: var(--gris-oscuro);
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
 
+/* Botones */
+.boton {
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
 }
-.formulario{
-  margin-bottom: 20px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  max-width: 500px;
+.boton a{
+  text-decoration: none;
+  color: inherit;
 }
-.formulario input{
-  padding:8px;
-  font-size:16px;
-  border:1px solid #ccc;
-  border-radius:5px;
+
+.boton-verde {
+  background-color: var(--verde-hoja);
+  color: white;
 }
-.botones{
-  display:flex;
-  gap:10px;
+.boton-verde:hover {
+  background-color: #27672B;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
-.opciones label{
-  margin-right:10px;
+
+.boton-amarillo {
+  background-color: var(--amarillo-maiz);
+  color: var(--gris-oscuro);
 }
-.etiquetas{
-  width: 27.9cm;
-  height: 21cm;
-  display:grid;
-  grid-template-columns:repeat(8, 1fr);
-  
-  page-break-after: always;
+.boton-amarillo:hover {
+  background-color: #e0a800;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
-.etiqueta{
-  width: 5cm;
-  height:3cm;
-  border:1px solid #000;
+
+/* Sombras */
+.sombra {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tarjetas */
+.tarjeta {
+  background-color: white;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 1em 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Inputs */
+.input {
+  padding: 0.5em;
+  border: 1px solid #CCCCCC;
+  border-radius: 6px;
+  width: 100%;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items:center;
-  font-size: 8px;
-  text-align:center;
-  break-inside: avoid;
+  font-size: 1em;
 }
-.etiqueta h3{
-  font-size: 12px;
+.input:focus {
+  border-color: var(--verde-hoja);
+  outline: none;
+}
+
+/* Alertas */
+.alerta-error {
+  background-color: var(--rojo-jitomate);
+  color: white;
+  padding: 0.8em;
+  border-radius: 6px;
+  margin: 1em 0;
+}
+.alerta-ok {
+  background-color: var(--verde-limon);
+  color: var(--gris-oscuro);
+  padding: 0.8em;
+  border-radius: 6px;
+  margin: 1em 0;
+}
+
+/* Layout */
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+/*
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+h2, p {
   margin: 0;
 }
-.etiqueta h2{
-  font-size: 18px;
-  font-weight:bold ;
-}
-.etiqueta p{
-  font-size: 14px;
-}
-.logo-pequeno{
-  width: 50px;
-  height: auto;
-}
 
-/* estilos para hoja completa */
-.hoja-completa{
+
+.app {
+  padding: 20px;
+}
+.formulario {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+}
+.formulario input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.botones {
+  display: flex;
+  gap: 10px;
+}
+.opciones label {
+  margin-right: 10px;
+} /*
+
+
+
+/* CONTENEDOR DE ETIQUETAS */
+
+/*
+
+}  */
+
+
+
+/* UNA ETIQUETA */
+
+/*
+
+  */
+
+
+
+  /* Hoja completa */
+/*
+
+.hoja-completa {
   width: 21cm;
   height: 27.9cm;
-  border:2px dashed #000;
+  border: 2px dashed #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size:32px;
+  font-size: 32px;
   break-after: page;
-
 }
-.logo-grande{
+.logo-grande {
   width: 100px;
   height: auto;
   margin-bottom: 20px;
 }
 
-/*Estilos para anuncios*/
-.anuncios{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
+*/
+
+
+
+/* Anuncios */
+
+/*
+.anuncios {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.anuncio{
+.anuncio {
   width: 21cm;
   height: 27.9cm;
-  border:3px  solid red;
+  border: 3px solid red;
   box-sizing: border-box;
-  padding:40px;
-  text-align:center;
-  font-size:28px;
+  padding: 40px;
+  text-align: center;
+  font-size: 28px;
   break-after: page;
-
-
 }
-.logo-anuncio{
+.logo-anuncio {
   width: 80px;
   margin-bottom: 15px;
 }
 
+*/
 
-@media print{
-  body *, .header, .tittle {
-    visibility: hidden;
+
+/* --- ESTILOS DE IMPRESIÓN --- */
+
+/*
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0cm;
   }
-  .app, .app * {
-    visibility: visible;
+
+  body {
+    margin: 0;
+    padding: 0;
   }
-  .formulario, .botones, .opciones{
-    display:none;
+
+  .header,
+  .tittle,
+  .formulario,
+  .botones,
+  .opciones {
+    display: none !important;
   }
-  .etiqueta, .hoja-completa, .anuncio{
-    page-break-after: avoid;
+
+  .app {
+    padding: 0;
+  }
+
+  .etiquetas {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .etiqueta,
+  .hoja-completa,
+  .anuncio {
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 }
 
+*/

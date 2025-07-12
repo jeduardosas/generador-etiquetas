@@ -1,0 +1,9 @@
+input{
+  margin-bottom:30px;
+}
+.botones{
+  margin-top:50px;
+  display:flex;
+  justify-content:center;
+  gap:50px;
+}

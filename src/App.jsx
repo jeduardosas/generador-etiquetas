@@ -1,5 +1,36 @@
-import {useState} from 'react'
-function App() {
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Index from "./pages/Index"
+import EtiquetaChica from './pages/EtiquetaChica'
+import EtiquetaGrande from './pages/EtiquetaGrande'
+import Anuncio from './pages/Anuncio'
+import RenderVista from './pages/renderVista'
+import NotFound from './pages/NotFound'
+import Header from './components/Header'
+
+
+const App = () => {
+  return (
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          
+          <Route path='/' element={<Index />} />
+          <Route path='/etiquetaChica' element={<EtiquetaChica />} />
+          <Route path='/etiquetaGrande' element={<EtiquetaGrande />} />
+          <Route path='/anuncio' element={<Anuncio />} />
+          <Route path='/renderVista' element={<RenderVista />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  )
+}
+
+export default App
+
+/* import {useState} from 'react'
+const  App = () => {
   const [productos,setProductos] = useState([]);
   const [nombre,setNombre] = useState('');
   const [precio,setPrecio] = useState('');
@@ -72,54 +103,12 @@ function App() {
 
   return (
     <>
-      <div className="header">
-        <div className='logo-container'>
-          <img src="./logo.png" alt="img-logo-yoli" />
-        </div>
-        <nav>
-          
-        </nav>
-        <h1 className='tittle'>Generador de Etiquetas</h1>
-      </div>
+      
 
-      <div className='app'>
-        
-        <div className='formulario'>
-          <input 
-            type="text" 
-            placeholder='Nombre del producto o anuncio'
-            value={nombre}
-            onChange={(e)=>setNombre(e.target.value)}
-            />
-            
-          <input 
-            type="number" 
-            placeholder='Precio'
-            value={precio}
-            onChange={(e)=>setPrecio(e.target.value)}
-            />
-            <input 
-            type="text" 
-            placeholder='Descripcion'
-            value={descripcion}
-            onChange={(e)=>setDescripcion(e.target.value)}
-            />
-
-          <div className='botones'>
-            <button onClick={agregarProducto}>Agregar Producto</button>
-            <button onClick={imprimir}>Imprimir</button>
-          </div>
-
-          <div className='opciones'>
-            <label><input type="radio" value='etiqueta' checked={modo === 'etiqueta'} onChange={(e)=>setModo(e.target.value)} />Etiqueta</label>
-            <label><input type="radio" value='grande' checked={modo === 'grande'} onChange={(e)=>setModo(e.target.value)} />Grande</label>
-            <label><input type="radio" value='anuncio' checked={modo === 'anuncio'} onChange={(e)=>setModo(e.target.value)} />Anuncio</label>
-          </div>
-        </div>
-        {renderVista()}
-      </div>
+      
     </>
   )
 }
 
 export default App
+ */

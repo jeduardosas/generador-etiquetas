@@ -1,0 +1,14 @@
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo-container img {
+  width: 200px;
+  height: auto;
+}
+.tittle {
+  text-align: center;
+}

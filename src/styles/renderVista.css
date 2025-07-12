@@ -1,0 +1,40 @@
+.etiquetas {
+  width: 21cm;
+  height: 27.9cm;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4cm, 1fr));
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.etiqueta-chica {
+  width: 4cm;
+  height: 3cm;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 8px;
+  text-align: center;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  line-height: .6;
+}
+.etiqueta-chica h2 {
+  font-size: 13px;
+  margin: 0;
+}
+.etiqueta-chica h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+.etiqueta-chica p {
+  font-size: 14px;
+  font-style: italic;
+}
+.logo-pequeno {
+  width: 50px;
+  height: auto;
+}
