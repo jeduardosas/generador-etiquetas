@@ -1,13 +1,14 @@
-
+import {useEtiquetas} from '../../provider/EtiquetaProvider.jsx';
 import { useLocation, Link } from "react-router-dom"
 import '../styles/renderVista.css'
 
 const renderVista = () => {
-  const location = useLocation();
-  const etiquetasArr = location.state || [];
-  const etiquetas = etiquetasArr.etiquetas || [];
+  const {etiquetas,tipo} = useEtiquetas()
+  console.log(etiquetas);
 
- 
+  const imprimir = ()=> {
+    window.print();
+  };
   
   if(!etiquetas.length) {
     return (
@@ -22,15 +23,15 @@ const renderVista = () => {
 
     )
   }
-  if(etiquetasArr.tipo === 'chica'){
+  if(tipo === 'chica'){
     return (
      <div>
       <div className="botones">
         <button className='boton boton-amarillo'><Link to={'/etiquetaChica'}>Seguir Agregando Etiquetas</Link></button>
-        <button className='boton boton-amarillo'>Imprimir</button>
+        <button onClick={()=>{imprimir()}} className='boton boton-amarillo'>Imprimir</button>
       </div>
-      <div>
-         <div className="etiquetas">
+      <div className='print-container'>
+         
           {etiquetas.map((etiqueta,index)=>(
               <div key={index} className="etiqueta-chica">
                 <img src="./logo.png" className='logo-pequeno' alt="img-logo-yoli" />
@@ -40,7 +41,7 @@ const renderVista = () => {
               </div>
             ))
           }
-      </div>
+      
       </div>
      </div>
     )

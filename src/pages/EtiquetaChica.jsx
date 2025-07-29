@@ -1,24 +1,29 @@
-import{ useState } from 'react'
-import { Link, useNavigate } from "react-router-dom"
+import{ useState, useEffect } from 'react'
+import {useEtiquetas} from '../../provider/EtiquetaProvider.jsx'
+import { Link } from "react-router-dom"
 import RenderVista from './renderVista'
 import '../styles/etiquetaChica.css'
 
 const EtiquetaChica = () => {
 
-  
+  const { etiquetas, setEtiquetas, setTipo} = useEtiquetas();
+
   const [nombre, setNombre] = useState('');
   const [precio, setPrecio] = useState('');
   const [descripcion, setDescripcion] = useState('');
-  const [etiquetas,setEtiquetas] = useState([])
 
-  let navigate = useNavigate();
+  console.log(etiquetas)
+
+  useEffect(()=>{
+    setTipo('chica');
+  },[])
 
   const agregarEtiqueta = (e)=>{
     
     e.preventDefault()
     if(nombre && precio && descripcion){
-      setEtiquetas([...etiquetas, {nombre,precio,descripcion}]);
-
+      const nuevas = [...etiquetas, {nombre, precio, descripcion}]
+      setEtiquetas(nuevas);
       setNombre('');
       setPrecio('');
       setDescripcion('');
@@ -62,17 +67,7 @@ const EtiquetaChica = () => {
             <button
               onClick={e=>{agregarEtiqueta(e)}} 
               className='boton boton-amarillo'>Agregar</button>
-            <button
-              onClick={e=>{
-                e.preventDefault()
-                const etiquetasArr = {
-                  tipo:'chica',
-                  etiquetas
-                }
-
-                navigate('/renderVista', {state: etiquetasArr})
-              }} 
-              className='boton boton-amarillo'>Vista Previa</button>
+            <button className='boton boton-amarillo'><Link to='/renderVista'>Vista Previa</Link></button>
           </div>
 
           
