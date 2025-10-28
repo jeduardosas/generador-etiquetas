@@ -7,6 +7,7 @@
 
 }
 .etiqueta-chica {
+  position: relative;
   width: 7cm;
   height: 5cm;
   border: 1px solid #ccc;
@@ -18,6 +19,12 @@
   font-size: 12px;
   break-inside: avoid;
   page-break-inside: avoid;
+  transition: box-shadow 0.3s ease;
+  cursor:pointer;
+}
+.etiqueta-chica:hover {
+  background-color: #f0f0f0;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
 }
 .etiqueta-chica h2 {
   font-size: 22px;
@@ -38,6 +45,38 @@
 .logo-pequeno {
   width: 35%;
   height: auto;
+}
+
+.menu-hover {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: none;
+  
+  gap: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 6px;
+  border-radius: 4px;
+  z-index: 10;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+}
+.etiqueta-chica:hover .menu-hover {
+  display: flex;
+}
+.menu-hover button {
+  font-size: 12px;
+  padding: 4px 6px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  text-align: left;
+}
+
+.menu-hover button:hover {
+  color: var(--amarillo-maiz);
+  
 }
 
 @media print{

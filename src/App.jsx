@@ -3,9 +3,11 @@ import Index from "./pages/Index"
 import EtiquetaChica from './pages/EtiquetaChica'
 import EtiquetaGrande from './pages/EtiquetaGrande'
 import Anuncio from './pages/Anuncio'
-import RenderVista from './pages/renderVista'
+import RenderVista from './pages/RenderVista'
+import Editar from './pages/Editar'
 import NotFound from './pages/NotFound'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 const App = () => {
@@ -20,8 +22,10 @@ const App = () => {
           <Route path='/etiquetaGrande' element={<EtiquetaGrande />} />
           <Route path='/anuncio' element={<Anuncio />} />
           <Route path='/renderVista' element={<RenderVista />} />
+          <Route path='editar/:id'element={<Editar /> }/>
           <Route path='*' element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   )

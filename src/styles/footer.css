@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;500&display=swap');
+
+.footer {
+  margin-top:50px;
+  background-color: #f8f8f8;
+  color: #444;
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  border-top: 1px solid #e3e3e3;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --- Logo horizontal --- */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #2c2c2c;
+}
+
+.footer-logo .brand {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.footer-logo .brand-sub {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #777;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-logo .dot {
+  color: #c2a85f; /* dorado tenue */
+  font-size: 1.2rem;
+  transform: translateY(-1px);
+}
+
+/* --- Divider --- */
+.divider {
+  width: 60px;
+  height: 1.5px;
+  background-color: #c2a85f;
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+/* --- Texto inferior --- */
+.footer-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  font-weight: 300;
+}

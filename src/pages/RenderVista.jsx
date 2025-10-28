@@ -1,14 +1,38 @@
+import { useEffect } from 'react'
 import {useEtiquetas} from '../../provider/EtiquetaProvider.jsx';
+import EtiquetaSmall from '../components/EtiquetaSmall.jsx';
 import { useLocation, Link } from "react-router-dom"
 import '../styles/renderVista.css'
 
 const renderVista = () => {
-  const {etiquetas,tipo} = useEtiquetas()
-  console.log(etiquetas);
+  const {etiquetas,tipo, setEtiquetas} = useEtiquetas();
+
+  useEffect(() => {
+    const handleAfterPrint = () => {
+      setEtiquetas([]);
+      localStorage.removeItem('etiquetas');
+
+      toast('Etiquetas eliminadas después de imprimir', {
+        type: 'info',
+        position: 'top-center',
+        autoClose: 1500,
+      });
+    };
+
+    // Escuchamos el evento del navegador
+    window.addEventListener('afterprint', handleAfterPrint);
+
+    // Limpieza del evento
+    return () => window.removeEventListener('afterprint', handleAfterPrint);
+  }, [setEtiquetas]);
 
   const imprimir = ()=> {
     window.print();
   };
+
+  const eliminarEtiqueta = (id)=>{
+    setEtiquetas(etiquetas.filter(etiqueta => etiqueta.id !== id));
+  }
   
   if(!etiquetas.length) {
     return (
@@ -33,12 +57,10 @@ const renderVista = () => {
       <div className='print-container'>
          
           {etiquetas.map((etiqueta,index)=>(
-              <div key={index} className="etiqueta-chica">
-                <img src="./logo.png" className='logo-pequeno' alt="img-logo-yoli" />
-                <h2>{etiqueta.nombre}</h2>
-                <h3>${etiqueta.precio}</h3>
-                <p>{etiqueta.descripcion}</p>
-              </div>
+              <EtiquetaSmall 
+                etiqueta={etiqueta}
+                eliminarEtiqueta={eliminarEtiqueta}
+              />
             ))
           }
       
